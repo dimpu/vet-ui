@@ -1,0 +1,8 @@
+<label ng-click='$ctrl.handleSelect()'>{{$ctrl.label}}</label>
+<select
+    ng-model="$ctrl.model"
+    ng-options="option.value for option in $ctrl.options track by option.key"
+    ng-change="$ctrl.onSelect({ selection: $ctrl.model })"
+>
+    <option value="none">None</option>
+</select>

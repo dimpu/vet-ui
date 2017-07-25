@@ -1,0 +1,41 @@
+<div ng-class="{'is-add': ($ctrl.isAdd)}">
+    <ng-switch  on="$ctrl.state">
+        <div class="button-group" ng-class="{'is-hover': $ctrl.isHover}" ng-switch-default>
+            <ng-switch on="$ctrl.state">
+                <button
+                    class='button__circular button__circular--small button__circular--red-outline edit editdelete'
+                    ng-hide='$ctrl.hideDeleteButton'
+                    ng-click="$ctrl.confirmDelete()"
+                    ng-switch-default
+                    >
+                    Delete
+                </button>
+                <button
+                    class='button__circular button__circular--small edit editopen'
+                    ng-click="$ctrl.edit()"
+                    ng-switch-default
+                    >
+                    Edit
+                </button>
+
+                <button class="button__circular" ng-click="$ctrl.edit()" ng-switch-when="add">
+                    {{$ctrl.addText}}
+                </button>
+                <span ng-switch-when="confirm" class="confirm">
+                    <a class='confirm__delete' ng-click="$ctrl.delete()">Confirm Delete</a>
+                    <a class='confirm__cancel' ng-click="$ctrl.resetState()">Cancel</a>
+                </span>
+            </ng-switch>
+        </div>
+        <div class="button-group editing" ng-switch-when="editing">
+            <button class="button__circular button__circular--small button__circular--gray-outline editcancel" ng-click="$ctrl.cancel()">Cancel</button>
+            <button class="button__circular button__circular--small editsave"
+                ng-click="$ctrl.save()"
+                ng-disabled="!$ctrl.isValid"
+                >Save</button>
+        </div>
+    </ng-switch>
+    <vet-collapsible is-open="$ctrl.state === 'editing'" class="blue">
+        <div ng-transclude></div>
+    </vet-collapsible>
+</div>

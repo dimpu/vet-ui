@@ -1,0 +1,161 @@
+// Input
+//
+// This is the standard input field. It supports standard ngInput decorators and validation parameters
+//
+// markup:
+// <vet-input name="firstName" validation-message="This field only accepts the name Chris" pattern="Chris" label="First Name" ng-model="first_name"></vet-input>
+// <vet-input required label="Last Name" ng-model="last_name"></vet-input>
+// <vet-input class='light' required label="Last Name" ng-model="last_name"></vet-input>
+// <vet-input label="Salary" icon="icon-salarypref" ng-model="salary"></vet-input>
+// <div class="row">
+//   <div class="col-xs-6"><vet-input label="Resume" icon="icon-circle-resume" ng-model="resume"></vet-input></div>
+//   <div class="col-xs-6"><vet-input label="Github" icon="icon-github-tenticle" ng-model="github"></vet-input></div>
+// </div>
+// {{first_name}}
+// {{last_name}}
+// {{salary}}
+// {{resume}}
+// {{github}}
+//
+// Styleguide 1.4
+
+input[type='number'] {
+  -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+@mixin float() {
+  font-size: .75em;
+  -webkit-transform: translateY(-150%);
+  transform: translateY(-150%);
+}
+
+@mixin input() {
+  font-size: 20px;
+  position: relative;
+  display: block;
+  color: $vettery-cool-gray;
+  font-family: 'Effra', sans-serif;
+  font-weight: 400;
+  >i{
+    color: $vettery-dark-cool-gray;
+    float: left;
+    width: 1em;
+    margin-right: 10px;
+    margin-top: 1.3em;
+    font-size: 1.3em;
+    font-style: normal;
+  }
+  >div{
+    position: relative;
+    overflow: hidden;
+    >label{
+      font-weight: inherit;
+      user-select: none;
+      white-space: nowrap;
+      position: absolute;
+      bottom: 0;
+      left: 2px;
+      font-size: 20px;
+      transition: .2s ease-out;
+      &.float-up{
+        @include float();
+      }
+      &.focus{
+        color: $vettery-blue;
+      }
+    }
+    >input{
+      position: relative;
+      z-index: 1;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid $vettery-cool-gray;
+      border-radius: 0;
+      outline: none;
+      height: 1.5em;
+      width: 100%;
+      margin: 1.4em 0 0 0;
+      padding: 0 0 0 2px;
+      box-shadow: none;
+      box-sizing: content-box;
+      transition: all 0.3s;
+      font-weight: 400;
+      color: $vettery-off-black;
+      line-height: 34px;
+      height: 34px;
+      &:focus {
+        border-bottom: 1px solid $vettery-blue;
+        & + label {
+          color: $vettery-blue;
+          @include float();
+        }
+      }
+    }
+  }
+  >span{
+    visibility: collapse;
+    font-size: 0.7em;
+    position: absolute;
+    bottom: -20px;
+    color: $vettery-red;
+  }
+  &.ng-invalid{
+    >div{
+      >label{
+        color: $vettery-red;
+      }
+      >input{
+        border-color: $vettery-red;
+      }
+    }
+    >span{
+      visibility: visible;
+      color: $vettery-red;
+    }
+  }
+  &.gray-border{
+
+  }
+  &.light{
+    color: $vettery-cool-gray;
+    >i{
+      color: $vettery-cool-gray;
+    }
+    >div{
+      >input{
+        border-bottom: 1px solid $vettery-cool-gray;
+        color: #fff;
+        &:focus {
+          border-bottom: 1px solid #fff;
+          & + label {
+            color: #fff;
+          }
+        }
+      }
+    }
+    >span{
+      color: $vettery-red;
+    }
+  }
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $vettery-cool-gray;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: $vettery-cool-gray;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: $vettery-cool-gray;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: $vettery-cool-gray;
+  }
+}
+
+vet-input{
+  @include input();
+}

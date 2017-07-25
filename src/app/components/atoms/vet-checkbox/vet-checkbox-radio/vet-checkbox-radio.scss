@@ -1,0 +1,106 @@
+// Checkbox Atom Radio
+//
+// Checkbox Radio
+//
+// markup:
+// <vet-checkbox-radio label='Wrong Industry' ng-model='model'></vet-checkbox-radio>
+// <vet-checkbox-radio label='Too small' ng-model='model'></vet-checkbox-radio>
+// <vet-checkbox-radio label='Too large' ng-model='model'></vet-checkbox-radio>
+// {{model}}
+//
+// sg-wrapper:
+// <div ng-init=''>
+//   <sg-wrapper-content/>
+// </div>
+//
+// Styleguide 1.6.1
+
+vet-checkbox-radio{
+	user-select: none;
+	&.light {
+		label {
+			color: $vettery-light-cool-gray;
+			&.checked{
+				color: $vettery-light-cool-gray;
+			}
+		}
+		svg{
+			path{
+				stroke: $vettery-light-cool-gray;
+			}
+		}
+		.box {
+			border-color: $vettery-light-cool-gray;
+			&.checked{
+				border-color: $vettery-light-cool-gray;
+			}
+		}
+	}
+	position: relative;
+	margin-right: 20px;
+  	display: inline-flex;
+	input[type="radio"]{
+		opacity: 0;
+		-webkit-appearance: none;
+		display: inline-block;
+		vertical-align: middle;
+		z-index: 100;
+		width: 20px;
+		height: 20px;
+		top: 50%;
+		left: 0;
+		margin-top: -10px;
+		position: absolute;
+		cursor: pointer;
+	}
+	.box{
+		content: '';
+		border: 2px solid $vettery-cool-gray;
+		-webkit-transition: opacity 0.3s;
+		transition: opacity 0.3s;
+		width: 20px;
+		height: 20px;
+		top: 50%;
+		left: 0;
+		margin-top: -10px;
+		position: absolute;
+		cursor: pointer;
+		&.checked{
+			border: 2px solid $vettery-dark-red;
+		}
+	}
+	label{
+		display: inline-block;
+		position: relative;
+		top: 0px;
+		font-size: 18px;
+		margin: 0;
+		padding: 0 0 0 25px;
+		vertical-align: top;
+		color: $vettery-cool-gray;
+		cursor: pointer;
+		-webkit-transition: color 0.3s;
+		transition: color 0.3s;
+		font-family: 'Effra';
+		font-weight: 400;
+		&.checked{
+			color: $vettery-dark-red;
+		}
+	}
+	svg{
+		position: absolute;
+		width: 14px;
+		height: 14px;
+		top: 50%;
+		margin-top: -7px;
+		left: 3px;
+		pointer-events: none;
+		path{
+			stroke: $vettery-dark-red;
+			stroke-width: 24px;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			fill: none;
+		}
+	}
+}

@@ -1,0 +1,5 @@
+<div class="position"></div>
+<i ng-class="$ctrl.year ? 'glyphicon-ok': 'caret'" class='glyphicon'></i>
+<label ng-class="{ 'active': $ctrl.model }">
+    {{$ctrl.label}} <span ng-show="$ctrl.year">({{$ctrl.year}})</span>
+</label>

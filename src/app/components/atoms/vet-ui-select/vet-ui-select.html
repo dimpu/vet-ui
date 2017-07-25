@@ -1,0 +1,28 @@
+<ui-select
+    class="vet-ui-select"
+    ng-class='{ "disabled": $ctrl.disabled, "light": $ctrl.light, "error": $ctrl.error }'
+    ng-model="$ctrl.ngModel"
+    on-select="$ctrl.handleSelect()"
+    append-to-body="$ctrl.appendToBody"
+    ng-click="$ctrl.updateLabel()"
+    uis-open-close='$ctrl.onBlur(isOpen)'
+    id="{{$ctrl.id}}"
+    >
+    <ui-select-match placeholder="{{$ctrl.placeholder}}">{{$select.selected.value}}</ui-select-match>
+    <ui-select-choices
+        repeat="val in $ctrl.options track by val.key"
+        refresh="$ctrl.refresh({ query: $select.search })"
+        refresh-delay="100"
+        >
+        <div ng-bind="val.value"></div>
+    </ui-select-choices>
+</ui-select>
+<label
+    ng-class='{
+    "disabled": $ctrl.disabled,
+    "light": $ctrl.light,
+    "active": $ctrl.labelActive,
+    "focus": $ctrl.labelFocus,
+    "error": $ctrl.error
+    }'
+    ng-bind="$ctrl.label"></label>

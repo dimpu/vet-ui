@@ -1,0 +1,39 @@
+// Links Atom
+//
+// this is a link
+//
+// markup:
+// <a class='link__header' href='#'>link</a>
+// <a class='link__footer' href='#'>link</a>
+//
+// Styleguide 1.5
+
+@mixin link($color) {
+	color: $color;
+	font-family: "Effra", "Helvetica", sans-serif;
+	text-decoration: none;
+
+	&:hover {
+		padding-bottom: 1px;
+		border-bottom: 3px solid $color;
+	}
+}
+
+a {
+  color: $vettery-blue;
+	&.link__header {
+		text-transform: uppercase;
+		font-size: 16px;
+		line-height: 19px;
+		font-weight: 600px;
+
+		@include link($vettery-blue);
+	}
+
+	&.link__footer {
+		font-size: 20px;
+		font-weight: 400;
+
+		@include link(#fff);
+	}
+}

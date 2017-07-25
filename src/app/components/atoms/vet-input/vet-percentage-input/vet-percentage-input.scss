@@ -1,0 +1,5 @@
+@import '../vet-input';
+
+vet-percentage-input {
+  @include input();
+}

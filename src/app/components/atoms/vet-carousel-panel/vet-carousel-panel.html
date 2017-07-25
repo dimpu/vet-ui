@@ -1,0 +1,20 @@
+<div ng-class="{ mobile: $ctrl.isMobile }">
+    <div class="title">
+        <h1>{{$ctrl.title}}</h1>
+        <vet-progress-bar percentage="$ctrl.completeness"></vet-progress-bar>
+    </div>
+    <div ng-transclude></div>
+    <hr ng-if="$ctrl.isNotMobile">
+    <div class="footer-container">
+        <button
+            ng-class="{
+                'button--large button--blue-outline': $ctrl.isNotMobile,
+                'button__mobile': $ctrl.isMobile,
+            }"
+            ng-click="$ctrl.onNext()"
+            ng-disabled="$ctrl.disabled"
+        >
+            {{ $ctrl.buttonText }}
+        </button>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div>
+    <input class="tgl tgl-light" id="{{$ctrl.label}}"
+           type="checkbox"
+           ng-model="$ctrl.ngModel"
+           ng-change="$ctrl.change()">
+    <label class="tgl-btn" for="{{$ctrl.label}}"></label>
+    <span class="text" ng-bind="$ctrl.label"></span>
+</div>
+<div class="description" ng-transclude></div>

@@ -1,0 +1,9 @@
+<!--Vet-Panel Atom Template-->
+<div class="header" ng-if="$ctrl.title">
+    <span>{{$ctrl.title}}</span>
+    <span class="disclaimer">{{$ctrl.disclaimer}}</span>
+    <a ng-if="$ctrl.isEditable" ng-click="$ctrl.onEdit()" class='panel-edit'>
+        <i class="icon-edit-mobile"></i> Edit
+    </a>
+</div>
+<div ng-transclude></div>

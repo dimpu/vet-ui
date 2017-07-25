@@ -1,0 +1,8 @@
+/*
+  JSPM doesn't have a Stylus plugin yet and it's LESS plugin
+  doesn't support @imports yet, so we're going to use straight css.
+*/
+
+.app {
+	height: 100%;
+}

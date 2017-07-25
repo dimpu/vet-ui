@@ -1,0 +1,15 @@
+{
+	"main": "bundles/vet-ui.umd.js",
+	"version": "1.1.1",
+	"description": "angualr component devlopment pack with browserify,es6,bootstrap",
+	"name": "vet-ui",
+	"module": "index.js",
+	"keywords": [
+		"angular",
+		"npm",
+		"es6"
+	],
+	"author": "Aravind Buddha",
+	"license": "ISC",
+	"_id": "vet-ui@1.1.1"
+}

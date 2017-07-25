@@ -1,0 +1,27 @@
+
+<div ng-if="!$ctrl.isMobile"
+    class="desktop-spinner"
+    >
+    <div class='bars'
+        ng-hide='!$ctrl.show'
+        >
+        <div class="bar one"></div>
+        <div class="bar two"></div>
+        <div class="bar three"></div>
+        <div class="bar four"></div>
+        <div class="bar five"></div>
+    </div>
+    <i
+        ng-show='$ctrl.saved && !$ctrl.show'
+        class="glyphicon glyphicon-ok"></i>
+</div>
+
+<div class='mobile-spinner' ng-if='$ctrl.isMobile && ($ctrl.show || $ctrl.saved)'>
+    <div>
+        <div ng-if="$ctrl.show" class="saving">Saving...</div>
+        <div ng-if="$ctrl.saved && !$ctrl.show" class="saved">
+            <i class='glyphicon glyphicon-ok'></i>
+            <span>Saved</span>
+        </div>
+    </div>
+</div>

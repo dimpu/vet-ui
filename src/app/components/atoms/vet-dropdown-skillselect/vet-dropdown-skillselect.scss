@@ -1,0 +1,104 @@
+// Dropdown Skillselect Atom
+//
+// markup:
+// <vet-dropdown-skill-select class='dark' label='Javascript' ng-model='selection1'></vet-dropdown-skill-select>
+// <vet-dropdown-skill-select class='light' label='Ruby' ng-model='selection2'></vet-dropdown-skill-select>
+// <br/>
+// Theses are the selection models: {{selection1}} {{selection2}}
+//
+// sg-wrapper:
+// <div style='padding-bottom: 500px'>
+//   <sg-wrapper-content/>
+// </div>
+//
+//
+// Styleguide 1.20
+
+// dropdown is appended to body
+// so we must specify
+.vet-dropdown-skillselect {
+  &.dropdown-menu{
+    z-index: $vettery-z-index-dropdown-skillselect;
+    &::before{
+      content: "";
+      position: absolute;
+      border-style: solid;
+      border-width: 0 10px 10px;
+      border-color: $vettery-blue transparent;
+      display: block;
+      width: 0;
+      z-index: 1;
+      top: -10px;
+      left: 7px ;
+    }
+    > li{
+      > a{
+        cursor: pointer;
+        color: $vettery-blue;
+        font-family: $vettery-sans-serif;
+        font-weight: 400 ;
+        cursor: pointer;
+        font-size: 16px !important;
+        border: none !important;
+        &:hover {
+          color: $vettery-blue;
+        }
+        &:focus {
+          outline: none !important;
+          color: $vettery-blue !important;
+        }
+      }
+    }
+  }
+}
+
+vet-dropdown-skill-select{
+  margin-bottom: 8px;
+  cursor: pointer;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  position: relative;
+  width: 175px;
+  &.finance{
+    width: 220px;
+  }
+  &.sales {
+    width: 317px;
+  }
+  .caret {
+    margin-bottom: 7px;
+    border-top: 6px dashed;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+  }
+  label{
+    font-family: $vettery-sans-serif;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  &.dark{
+    i{
+      color: $vettery-cool-gray;
+      &.glyphicon-ok{
+        color: $vettery-blue;
+      }
+    }
+    label{
+      color: $vettery-cool-gray;
+      &.active{
+        color: $vettery-blue;
+      }
+    }
+  }
+  &.light{
+    i{
+      color: #FFF;
+    }
+    label{
+      color: #FFF;
+    }
+  }
+}

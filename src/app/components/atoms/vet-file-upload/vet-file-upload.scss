@@ -1,0 +1,136 @@
+// File Upload
+//
+// Markup:
+// Light file uploader:
+// <vet-file-upload style="padding: 18px"></vet-file-upload>
+// <br/><br/><br/>
+// Dark file uploader:
+// <vet-file-upload style="padding: 18px" class="blue"></vet-file-upload>
+//
+//
+// Styleguide 2.13
+
+vet-file-upload{
+  display: flex;
+  color: $vettery-blue;
+  letter-spacing: 0.4px;
+  width:100%;
+  > .desktop.left{
+    flex: 1;
+    height: 160px;
+    margin-right: 22px;
+    cursor: pointer;
+    background-position: bottom;
+    &, & .border-helper.top{
+      background-image: linear-gradient(to right, $vettery-blue 54%, rgba(255,255,255,0) 0%);
+      background-size: 12px 2px;
+      background-repeat: repeat-x;
+      &:hover{
+        opacity: 0.7;
+      }
+    }
+    .border-helper{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      background-size: 1px 3px;
+      &.left, &.right{
+        background-image: linear-gradient($vettery-blue 54%, rgba(255,255,255,0) 0%);
+        background-size: 2px 12px;
+        background-repeat: repeat-y;
+        &:hover{
+          opacity: 0.7;
+        }
+      }
+      &.left{
+        background-position: left;
+      }
+      &.right{
+        background-position: right;
+      }
+      &.top{
+        background-position: top;
+      }
+      .inner-text{
+        text-align: center;
+        font-size: 16px;
+      }
+    }
+  }
+  > .desktop.right{
+    flex: none;
+    button{
+      padding: 0;
+      margin: 0 0 10px 0;
+      border: 2px solid $vettery-blue;
+      width: 100%;
+      height: 54px;
+      text-align: left;
+      position: relative;
+      color: $vettery-blue;
+      background-color: #fff;
+      &:hover{
+        background-color:$vettery-blue;
+        color: #fff;
+        i{
+          border-right: 2px solid #fff;
+        }
+      }
+      i{
+        display: inline-block;
+        height: 100%;
+        width: 54px;
+        font-size: 30px;
+        border-right: 2px solid $vettery-blue;
+        text-align: center;
+        line-height: 50px;
+      }
+      span{
+        position: absolute;
+        top: 50%;
+        margin: -12px 0 0 10px;
+        font-size: 18px;
+      }
+    }
+    p{
+      font-size: 16px;
+      font-weight: initial;
+      a{
+        color: $vettery-blue;
+        text-decoration: underline;
+      }
+    }
+  }
+  > .mobile{
+    width: 100%;
+  }
+  &.blue{
+    background-color: $vettery-deep-blue;
+    color: #fff;
+    > div:first-child{
+      &, & .border-helper.top{
+        background-image: linear-gradient(to right, $vettery-cool-gray 54%, rgba(255,255,255,0) 0%);
+      }
+      & .border-helper.left, & .border-helper.right{
+        background-image: linear-gradient($vettery-cool-gray 54%, rgba(255,255,255,0) 0%);
+      }
+    }
+    > div:last-child{
+      flex:1;
+      button{
+        border-color: $vettery-deep-blue;
+        &:hover{
+          background-color:$vettery-blue;
+          color: #fff;
+        }
+        i{
+          border-color: $vettery-deep-blue;
+        }
+      }
+      p a{
+        color: #fff;
+      }
+    }
+  }
+}

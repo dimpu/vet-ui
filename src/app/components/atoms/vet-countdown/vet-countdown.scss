@@ -1,0 +1,36 @@
+// vetCountdown style
+
+// Countdown
+//
+// Markup:
+//
+// Styleguide 1.12
+
+vet-countdown{
+  color: $vettery-red;
+  &.dark-red{
+    color: $vettery-dark-red;
+  }
+  &.yellow{
+    color: $vettery-yellow;
+  }
+  &.green{
+    color: $vettery-green;
+  }
+  &.blue{
+    color: $vettery-blue;
+  }
+  &.black{
+    color: $vettery-off-black;
+  }
+  &.white{
+    color: white;
+  }
+  &.mobile{
+    vet-badge{
+      font-weight: inherit;
+      font-size: 12px;
+      margin-top: 0.5em;
+    }
+  }
+}

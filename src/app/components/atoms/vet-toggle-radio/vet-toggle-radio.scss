@@ -1,0 +1,109 @@
+// Toggle Radio Atom
+//
+// Toggle Radio
+//
+// markup:
+// <vet-toggle-radio label='Bananas' value='bananas' ng-model='fruit'>Bananas are okay</vet-toggle-radio>
+// <vet-toggle-radio label='Pears' value='pears' ng-model='fruit'>Pears are amazing</vet-toggle-radio>
+// <vet-toggle-radio label='Apples' value='apples' ng-model='fruit'>Apples are disapointing</vet-toggle-radio>
+// {{fruit}}
+//
+//
+// Styleguide 1.21
+
+vet-toggle-radio{
+  display: block;
+  margin: 25px 0;
+  .tgl {
+  	display: none;
+
+  	// add default box-sizing for this scope
+  	&,
+    &:after,
+    &:before,
+  	& *,
+    & *:after,
+    & *:before,
+  	& + .tgl-btn-radio {
+  		box-sizing: border-box;
+  		&::selection {
+  			background: none;
+  		}
+  	}
+  	+ .tgl-btn-radio {
+  		outline: 0;
+      margin: 0 0 0 0;
+      display: inline-block;
+      width: 1.75em;
+      height: 1.75em;
+  		position: relative;
+  		cursor: pointer;
+      user-select: none;
+  		&:after,
+      &:before {
+  			position: relative;
+  			display: block;
+  			content: "";
+  			width: 100%;
+  			height: 100%;
+  		}
+  		&:after {
+        visibility: collapse;
+  		}
+  		&:before {
+  			display: none;
+  		}
+  	}
+  	&:checked + .tgl-btn-radio:after {
+  	}
+  }
+  .tgl-light {
+  	+ .tgl-btn-radio {
+  		background: $vettery-cool-gray;
+      border-radius: 50%;
+  		padding: 2px;
+      width: 16px;
+      height: 16px;
+  		transition: all .4s ease;
+  		&:after {
+  			border-radius: 50%;
+  			background: #fff;
+  			transition: all .2s ease;
+  		}
+      > span{
+        background-color: white;
+        border: 2px solid white;
+        padding: 4px;
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 50%;
+        position: absolute;
+        transition: all .2s ease;
+      }
+  	}
+  	&:checked + .tgl-btn-radio {
+  		background: $vettery-blue;
+      > span{
+        background-color: $vettery-blue;
+      }
+  	}
+    &:checked ~ .text {
+  		color: $vettery-off-black;
+  	}
+  }
+  .text{
+    color: $vettery-cool-gray;
+    position: relative;
+    top: -8px;
+    left: 10px;
+    font-size: 18px;
+    font-family: 'Effra';
+  }
+  .description{
+    margin-top: -8px;
+    margin-left: 42px;
+    color: $vettery-dark-cool-gray;
+    font-size: 14px;
+    font-family: Effra, sans-serif;
+  }
+}

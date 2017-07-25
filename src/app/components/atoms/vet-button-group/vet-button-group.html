@@ -1,0 +1,11 @@
+<!-- vet-button-group template -->
+<button ng-repeat="option in items track by $index"
+        ng-click="change($event, option)"
+        ng-class='{active:
+            (attrs.type == "radio" && option.label == model.label) ||
+            (attrs.type == "checkbox" && checkboxModel(option))
+        }'
+>
+    <div ng-bind="option.label"></div>
+    <div class="sub-label" ng-bind="option.subLabel"></div>
+</button>

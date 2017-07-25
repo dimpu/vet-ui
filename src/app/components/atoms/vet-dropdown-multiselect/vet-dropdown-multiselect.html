@@ -1,0 +1,21 @@
+<div>
+	<div ng-show='$ctrl.dropdownOptions.length > 1' >
+		<label ng-class='{"active": $ctrl.isActive()}'>
+			<i class='glyphicon glyphicon-ok'></i>
+			<div
+				ng-dropdown-multiselect
+				events="$ctrl.dropdownEvents"
+				options="$ctrl.dropdownOptions"
+				selected-model="$ctrl.selectedModel"
+				extra-settings="$ctrl.dropdownSettings"
+				translation-texts="$ctrl.translationTexts" >
+			</div>
+		</label>
+	</div>
+	<div ng-show='$ctrl.dropdownOptions.length == 1' >
+		<label ng-class='{"active": $ctrl.isActive()}' class='single'>
+			<i class='glyphicon glyphicon-ok'></i>
+			<button ng-click='$ctrl.singleUpdate()' ng-bind="$ctrl.name" class='solo-toggle btn btn-default'> </button>
+		</label>
+	</div>
+</div>

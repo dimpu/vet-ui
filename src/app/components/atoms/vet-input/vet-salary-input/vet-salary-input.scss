@@ -1,0 +1,15 @@
+// Salary Input
+//
+// Markup:
+// <vet-salary-input placeholder="Open to discussion" label="Salary" ng-model="salary"></vet-salary-input>
+// <vet-salary-input class='light' placeholder="Open to discussion" label="Salary" ng-model="salary"></vet-salary-input>
+// {{salary}}
+//
+// Styleguide 1.4.1
+//
+
+@import '../vet-input';
+
+vet-salary-input{
+  @include input();
+}

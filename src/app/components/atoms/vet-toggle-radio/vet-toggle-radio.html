@@ -1,0 +1,10 @@
+<div>
+    <input class="tgl tgl-light" id="{{$ctrl.label}}"
+           type="radio"
+           ng-model="$ctrl.ngModel"
+           value="{{$ctrl.value}}"
+           ng-change="$ctrl.change()"/>
+    <label class="tgl-btn-radio" for="{{$ctrl.label}}"><span class="tgl-btn-radio-center"></span></label>
+    <span class="text" ng-bind="$ctrl.label"></span>
+</div>
+<div class="description" ng-transclude></div>

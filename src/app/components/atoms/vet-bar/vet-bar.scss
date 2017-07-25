@@ -1,0 +1,104 @@
+// Bar Atom
+//
+// Bar (Radio)
+//
+// markup:
+// <vet-bar ng-repeat='i in items' label='i.label' year='i.value'></vet-bar>
+// These are the years :{{items}}<br/>
+//
+// sg-wrapper:
+// <div ng-init='items = [{"label": "Full Time", "value": "0-1"}, {"label": "Backend", "value": "1-2"}, {"label": "Frontend", "value": "2-4"}, {"label": "Tech Mmgt", "value": "4-6"}, {"label": "QA Engineer", "value": "6+"}]'>
+//   <sg-wrapper-content/>
+// </div>
+//
+//
+// Styleguide 1.14
+
+
+vet-bar{
+  &.blue {
+    .bar {
+      background: $vettery-blue;
+    }
+  }
+  position: relative;
+  height: 36px;
+  display: flex;
+  margin: 10px 0;
+  .position{
+    @extend .vet-row-label;
+  }
+  > .bar-container{
+    flex: 1;
+    position: relative;
+    background: url(assets/svg/dot.svg) repeat-x center;
+  }
+  .arrow {
+    float: right;
+    fill: $vettery-blue;
+    margin-right: -12px;
+    transform-origin: left;
+    &.ng-enter, &.ng-leave {
+      transition: transform linear 0.1s;
+      transition-delay: 0.7s;
+    }
+    &.ng-enter.ng-enter-active, &.ng-leave {
+      transform: scaleX(1);
+    }
+    &.ng-leave.ng-leave-active, &.ng-enter {
+      transform: scaleX(0);
+    }
+  }
+  .bar {
+    height: 36px;
+    position: absolute;
+    background: $vettery-mint-green;
+  }
+
+  .bar-label {
+    font-family: $vettery-sans-serif;
+    color: white;
+    line-height: 36px;
+    position: absolute;
+    left: 10px;
+    color: #fff;
+  }
+
+  @media screen and (max-device-width: $vettery-max-device-width){
+    height: 26px;
+    &.blue {
+      .position {
+        color: $vettery-light-cool-gray;
+      }
+      .bar-label {
+        color: $vettery-light-cool-gray;
+      }
+    }
+    .position{
+      position: absolute;
+      font-size: 1.1em;
+      left: 8px;
+      z-index: 1;
+      color: $vettery-dark-cool-gray;
+      border: none;
+      height: 26px;
+      line-height: 26px;
+    }
+    .arrow {
+      margin-right: -6px;
+    }
+    .bar {
+      background: $vettery-light-cool-gray;
+      height: 26px;
+    }
+
+    .bar-label {
+      left: initial;
+      right: 8px;
+      color: $vettery-dark-cool-gray;
+      font-size: 12px;
+      font-style: italic;
+      line-height: 26px;
+    }
+  }
+}

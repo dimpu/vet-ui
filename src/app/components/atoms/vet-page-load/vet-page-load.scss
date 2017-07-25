@@ -1,0 +1,78 @@
+vet-page-load {
+  > div {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $vettery-z-index-page-load;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .message {
+      color: $vettery-blue;
+      font-size: 1.3em;
+      width: 177px;
+      margin-left: 1.3em;
+    }
+
+    .message:after {
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: bottom;
+      animation: ellipsis steps(4,end) 2s infinite;
+      content: "\2026";
+      width: 0;
+    }
+    @keyframes ellipsis {
+      to {
+        width: 1em;
+      }
+    }
+    @-webkit-keyframes ellipsis {
+      to {
+        width: 1em;
+      }
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      background-image: url("assets/svg/vettery-wink-blue.svg");
+      background-repeat: no-repeat;
+      animation: heartbeat 2s infinite;
+
+      &.white {
+        background-color: #fff;
+      }
+      @keyframes heartbeat {
+        0% {
+          transform: scale( .95 );
+        }
+
+        20% {
+          transform: scale( 1 );
+        }
+
+        40% {
+          transform: scale( .95 );
+        }
+
+        60% {
+          transform: scale( 1 );
+        }
+
+        80% {
+          transform: scale( .95 );
+        }
+
+        100% {
+          transform: scale( .95 );
+        }
+      }
+    }
+  }
+}

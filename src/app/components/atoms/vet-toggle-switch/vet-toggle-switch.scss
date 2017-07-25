@@ -1,0 +1,100 @@
+// Toggle Switch Atom
+//
+// Toggle Switch
+//
+// markup:
+// <vet-toggle-switch label='example1' ng-model='test1'>Example Description</vet-toggle-switch>
+// <vet-toggle-switch label='example2' ng-model='test2'>Example Description</vet-toggle-switch>
+// <vet-toggle-switch label='example3' ng-model='test3'>Example Description</vet-toggle-switch>
+// {{test1}} {{test2}} {{test3}}
+//
+//
+// Styleguide 1.9
+
+vet-toggle-switch{
+  display: block;
+  margin: 18px 0;
+  .tgl {
+  	display: none;
+
+  	// add default box-sizing for this scope
+  	&,
+    &:after,
+    &:before,
+  	& *,
+    & *:after,
+    & *:before,
+  	& + .tgl-btn {
+  		box-sizing: border-box;
+  		&::selection {
+  			background: none;
+  		}
+  	}
+
+  	+ .tgl-btn {
+  		outline: 0;
+  		display: inline-block;
+  		width: 25px;
+  		height: 15px;
+  		position: relative;
+  		cursor: pointer;
+      user-select: none;
+  		&:after,
+      &:before {
+  			position: relative;
+  			display: block;
+  			content: "";
+  			width: 11px;
+  			height: 11px;
+  		}
+
+  		&:after {
+  			left: 0;
+  		}
+
+  		&:before {
+  			display: none;
+  		}
+  	}
+
+  	&:checked + .tgl-btn:after {
+  		left: 9.5px;
+  	}
+  }
+
+  .tgl-light {
+  	+ .tgl-btn {
+  		background: $vettery-cool-gray;
+  		border-radius: 2em;
+  		padding: 2px;
+  		transition: all .4s ease;
+  		&:after {
+  			border-radius: 50%;
+  			background: #fff;
+  			transition: all .2s ease;
+  		}
+  	}
+
+  	&:checked + .tgl-btn {
+  		background: $vettery-blue;
+  	}
+
+    &:checked ~ .text {
+  		color: $vettery-off-black;
+  	}
+  }
+  .text{
+    color: $vettery-cool-gray;
+    position: relative;
+    top: -8px;
+    left: 10px;
+    font-size: 18px;
+    font-family: 'Effra';
+  }
+  .description{
+    margin-left: 42px;
+    color: $vettery-dark-cool-gray;
+    font-size: 14px;
+    font-family: Effra, sans-serif;
+  }
+}

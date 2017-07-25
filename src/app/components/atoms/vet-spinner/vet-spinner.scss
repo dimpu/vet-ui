@@ -1,0 +1,67 @@
+$bars: 'one', 'two', 'three', 'four', 'five';
+$delay: 0.5;
+
+vet-spinner {
+  .mobile-spinner {
+    > div {
+      .saving {
+        color: $vettery-cool-gray;
+      }
+      .saved {
+        color: $vettery-green;
+      }
+    }
+  }
+  .desktop-spinner{
+    .glyphicon-ok {
+      opacity: 1;
+      position: absolute;
+      left: 31px;
+      top: -4px;
+      &.ng-hide{
+        opacity: 0;
+      }
+      &.ng-hide-add-active
+      {
+        transition: .2s all ease;
+      }
+      font-size: 28em;
+      color: $vettery-blue;
+    }
+    .bars {
+      width: 90em;
+      display: flex;
+      transition: opacity .2s ease;
+      &.ng-hide{
+        opacity: 0;
+      }
+    }
+    .bar {
+      flex: 1;
+      justify-content: center;
+      transition: margin 0.2s ease;
+      background-color: $vettery-blue;
+      transform: scaleY(1);
+      width: 10em;
+      height: 20em;
+      margin: 0 4em;
+      animation: extrude 0.3s ease-in alternate infinite;
+
+      @for $i from 1 through length($bars) {
+        &.#{nth($bars, $i)} {
+          animation-delay: -#{$delay * $i}s;
+        }
+      }
+    }
+  }
+
+  @keyframes extrude {
+    0% {
+      transform: scaleY(1);
+    }
+
+    100% {
+      transform: scaleY(2);
+    }
+  }
+}

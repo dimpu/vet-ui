@@ -1,0 +1,185 @@
+// Button Group Atom (Radio)
+//
+// Button Group (Radio)
+//
+// markup:
+// <vet-button-group items="items" ng-model="selection" type="radio"></vet-button-group>
+// <vet-button-group class='blue' items="items" ng-model="selection1" type="radio"></vet-button-group>
+// <br/>
+// These are the items :{{items}}<br/>
+// This is the model: {{selection}}
+//
+// sg-wrapper:
+// <div ng-init='selection="0-1 Years"; items = [{label:"0-1 Years", value:"0-1 Years"}, {label:"1-2 Years", value:"1-2 Years"}, {label:"2-4 Years", value:"2-4 Years"}, {label:"4-6 Years", value:"4-6 Years"}, {label:"6+ Years", value:"6+ Years"}]'>
+//   <sg-wrapper-content/>
+// </div>
+//
+//
+// Styleguide 1.10
+
+vet-button-group{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+
+  &.one-column {
+    button {
+      width: 100%;
+    }
+  }
+  &.two-column {
+    button {
+      width: 48%;
+    }
+  }
+  &.three-column {
+    button {
+      width: 30%;
+    }
+  }
+  &.four-column {
+    button {
+      width: 20%;
+    }
+  }
+  &.five-column {
+    button {
+      width: 18%;
+    }
+  }
+  &.six-column {
+    button {
+      width: 15%;
+    }
+  }
+
+  button {
+    flex-grow: 2;
+    box-sizing: border-box;
+    min-width: 139.24px;
+    min-height: 40px;
+    border: 1px solid $vettery-dark-cool-gray;
+    border-radius: 10px;
+    background: #FFFFFF;
+    margin: 8px 10px;
+    font-size: 18px;
+    font-family: "Effra", "Helvetica", sans-serif;
+    text-align: center;
+    line-height: 19px;
+    color: $vettery-dark-cool-gray;
+    transition: all 0.15s ease;
+    @media screen and (max-device-width: $vettery-max-device-width) {
+      font-size: 15px;
+    }
+    .sub-label {
+      font-size: 12px;
+    }
+    &:hover{
+      background: $vettery-blue;
+      color: #FFFFFF;
+      border: 1px solid $vettery-blue;
+      opacity: 0.9;
+    }
+  }
+  &.blue{
+    button{
+      border: 1px solid #fff;
+      color: #fff;
+      background: none;
+      &:hover{
+        background: #FFF;
+        color:  $vettery-deep-blue;
+        border: 1px solid #FFF;
+      }
+    }
+    .active{
+      background: #FFF;
+      color:  $vettery-deep-blue;
+      border: 1px solid #FFF;
+    }
+  }
+  &.blue-outline {
+    button{
+      border: 1px solid $vettery-blue;
+      color: $vettery-blue;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+  &.white-outline{
+      button{
+        border: 1px solid #fff;
+        background-color: $vettery-deep-blue;
+        color: #fff;
+        &.active{
+          background-color: #fff;
+          color: $vettery-deep-blue;
+          &:hover{
+            background-color: #fff;
+            color: $vettery-deep-blue;
+            opacity: 1;
+          }
+        }
+        &:hover{
+          background-color: #fff;
+          color: $vettery-deep-blue;
+        }
+      }
+  }
+  &.large{
+    button{
+      font-size: 18px;
+      height: 86px;
+    }
+  }
+  .active, &.blue-outline .active {
+    background: $vettery-blue;
+    color: #FFFFFF;
+    border: 1px solid $vettery-blue;
+  }
+  @media screen and (max-device-width: $vettery-max-device-width){
+    margin: 0 -5px;
+    button {
+      margin: 4px 5px;
+      background-color: #fff;
+      border: 1px solid $vettery-cool-gray;
+      border-radius: 5px;
+      color: $vettery-dark-cool-gray;
+      &:hover{
+        background-color: #fff;
+        border: 1px solid $vettery-dark-cool-gray;
+        color: $vettery-blue;
+      }
+      &.active{
+        border: 1px solid $vettery-blue;
+        background-color: $vettery-blue;
+        color: #fff;
+        &:hover{
+          background-color: $vettery-blue;
+          border: 1px solid $vettery-blue;
+          color: #fff;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// Button Group Atom (Checkbox)
+//
+// Button Group (Checkbox)
+//
+// markup:
+// <vet-button-group items="items" ng-model="selectionArray" type="checkbox"></vet-button-group>
+// <br/>
+// These are the items :{{items}}<br/>
+// This is the model: {{selectionArray}}
+//
+// sg-wrapper:
+// <div ng-init='selectionArray =  ["Peninsula","South Bay","City"]; items = [{label:"East Bay", value:"East Bay"}, {label:"Peninsula", value:"Peninsula"}, {label:"South Bay", value:"South Bay"}, {label:"City", value:"City"}]'>
+//   <sg-wrapper-content/>
+// </div>
+//
+//
+// Styleguide 1.10.1

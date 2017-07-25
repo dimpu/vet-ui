@@ -1,0 +1,76 @@
+// Select Atom
+//
+// Select dropdown
+//
+// markup:
+// <vet-select select="options" select-name='value' ng-model="selection" label='test'> </vet-select>
+// <br/>
+// These are the options :{{options}}<br/>
+// This is the model: {{selection}}
+//
+// sg-wrapper:
+// <div ng-init='options = [{id:"1", value:"Hello"}, {id:"2", value:"World"}, {id:"3", value:"Good" }, {id:"4", value: "2MO" }, {id:"5", value: "CCC" }]'>
+//   <sg-wrapper-content/>
+// </div>
+//
+//
+// Styleguide 1.7
+
+vet-select{
+  position: relative;
+  vertical-align: middle;
+  position: relative;
+  display: block;
+  margin-bottom: 0.5em;
+  color: $vettery-cool-gray;
+  font-family: 'Effra', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  select{
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    outline: 0;
+    border: none;
+    border-radius: 0;
+    margin: 1.4em 0 0 0;
+    padding: 0 0 0 2px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: $vettery-off-black;
+    border-bottom: 1px solid $vettery-cool-gray;
+    background: transparent;
+    background-position: 101% 50%;
+    background-repeat: no-repeat;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAAQUlEQVQoU2NkIBMwkqmPYQA0Hjh+4T8u5zpYGuB0EVgCm2Z8mkB64CYiayakCUUjzGZiNGFoJCVqBiA6SHEesloAitQQDapyaeMAAAAASUVORK5CYII=);
+    &.active{
+        border-bottom: 1px solid $vettery-blue;
+    }
+    &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 #000;
+    }
+  }
+  option{
+    font-family: "Effra";
+  }
+  label{
+    font-weight: inherit;
+      user-select: none;
+      white-space: nowrap;
+      position: absolute;
+      bottom: 0;
+      left: 2px;
+      font-size: 20px;
+      transition: .2s ease-out;
+      &.active{
+        font-size: .75em;
+        -webkit-transform: translateY(-150%);
+        transform: translateY(-150%);
+      }
+      &.focus{
+        color: $vettery-blue;
+      }
+  }
+}

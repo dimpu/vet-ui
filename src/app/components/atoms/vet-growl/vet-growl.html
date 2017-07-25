@@ -1,0 +1,4 @@
+<div ng-if="$ctrl.isOpen" ng-class="{ mobile : $ctrl.isMobile}" class="{{$ctrl.info.type}}">
+    <span>{{$ctrl.info.message}}</span>
+    <button class="button__circular button__circular--white-red-outline" ng-click="$ctrl.dismiss()">Dismiss</button>
+</div>

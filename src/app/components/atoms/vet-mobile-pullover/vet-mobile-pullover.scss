@@ -1,0 +1,78 @@
+
+// Mobile Pullover
+//
+// Markup:
+// <div>
+//  <button class='btn' ng-click='isOpen = !isOpen'>toggle</button>
+// <vet-mobile-pullover is-open="isOpen" status='"saved"' label="Sample Mobile Panel">
+//  <div style="padding: 10px">
+//    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+//  </div>
+// </vet-collapsible>
+// </div>
+//
+// Styleguide 1.23
+
+vet-mobile-pullover{
+  z-index: $vettery-z-index-mobile-pullover;
+  > div {
+    //display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 50px;
+    z-index: $vettery-z-index-mobile-pullover;
+    .bar {
+      background-color: white;
+      height: 40px;
+      width: 100%;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.21);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      position: fixed;
+      z-index: $vettery-z-index-mobile-pullover;
+      .back {
+        display: flex;
+        align-items: center;
+        .arrow {
+          display: flex;
+          font-size: 16px;
+          color: $vettery-blue;
+        }
+        .title {
+          font-family: Effra, Helvetica;
+          color: $vettery-blue;
+          margin-left: 10px;
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+  .pullover-transclude{
+    width: 100%;
+    padding: 50px 0 10px;
+  }
+  .transition.ng-enter {
+    transition:0.2s ease all;
+    transform: translateX(450px);
+  }
+  .transition.ng-enter-active {
+    transform: translateX(0px);
+  }
+  .transition.ng-leave {
+    transition:0.2s ease all;
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  .transition.ng-leave-active {
+    opacity: 0;
+    transform: translateX(450px);
+  }
+}

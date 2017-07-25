@@ -1,0 +1,94 @@
+// Collapsible
+//
+// Markup:
+// <div style="margin-top: 40px; font-size: 30px;">Hover me!!!</div>
+// <vet-collapsible-edit>
+//   <div style="padding: 10px">
+//     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+//   </div>
+// </vet-collapsible-edit>
+// <br/><br/><br/>
+// <vet-collapsible-edit is-add="true" add-text="Add Something">
+//   <div style="padding: 10px">
+//     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+//   </div>
+// </vet-collapsible-edit>
+//
+// sg-wrapper:
+// <div style="min-height: 50px;">
+//   <sg-wrapper-content/>
+// </div>
+//
+// Styleguide 1.16.1
+
+vet-collapsible-edit{
+  > div {
+    display: block;
+    font-family: Effra, Helvetica, sans-serif;
+    font-size: 14px !important;
+    position: relative;
+    &.is-add{
+      top: 8px;
+    }
+  }
+  .button-group{
+    display: block;
+    position: absolute;
+    top: -40px;
+    right: 0;
+    &.is-hover {
+      button.edit{
+        visibility: visible;
+      }
+    }
+    &.editing{
+      z-index: $vettery-z-index-1;
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.75) 33%,rgba(255,255,255,0.75) 100%);
+      padding-left: 100px;
+      a{
+        visibility: visible;
+      }
+    }
+    button{
+      float: right;
+      visibility: visible;
+    }
+    button.edit{
+      visibility: hidden;
+      text-decoration: none;
+      float: right;
+      cursor: pointer;
+      &:hover{
+        visibility: visible;
+      }
+    }
+    &:hover{
+      button.edit{
+        visibility: visible;
+      }
+    }
+    .confirm{
+      display: block;
+      text-align: right;
+      height: 50px;
+      line-height: 50px;
+      margin-top: -10px;
+      padding-left: 100px;
+      padding-right: 10px;
+      background: #fff;
+      a{
+        text-decoration: underline;
+        &.confirm__delete{
+          color: $vettery-red;
+          padding-right: 10px;
+        }
+        &.confirm__cancel{
+          color: $vettery-blue;
+        }
+      }
+    }
+  }
+  vet-collapsible{
+    color: #fff;
+  }
+}

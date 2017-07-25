@@ -1,0 +1,106 @@
+// Copy Atom
+//
+// Copy
+//
+// markup:
+// <span class='copy copy--left'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pharetra lectus aliquet risus consectetur congue. Maecenas nunc tellus, mattis non augue eget, efficitur egestas velit. Fusce vitae libero at diam porta elementum vitae posuere leo. Suspendisse vestibulum mi vestibulum risus molestie, ac iaculis elit condimentum.</span>
+// <span class='copy copy--center'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pharetra lectus aliquet risus consectetur congue. Maecenas nunc tellus, mattis non augue eget, efficitur egestas velit. Fusce vitae libero at diam porta elementum vitae posuere leo. Suspendisse vestibulum mi vestibulum risus molestie, ac iaculis elit condimentum.</span>
+// <span class='copy copy--white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pharetra lectus aliquet risus consectetur congue. Maecenas nunc tellus, mattis non augue eget, efficitur egestas velit. Fusce vitae libero at diam porta elementum vitae posuere leo. Suspendisse vestibulum mi vestibulum risus molestie, ac iaculis elit condimentum.</span>
+//
+// sg-wrapper:
+// <div class="sg-wrapper">
+//   <sg-wrapper-content/>
+// </div>
+//
+// Styleguide 1.2
+
+.copy {
+	display: block;
+	font-family: "Effra", "Helvetica", sans-serif;
+	font-size: 20px;
+	line-height: 28px;
+}
+
+.copy--white {
+	color: #fff;
+}
+
+.copy--black {
+  color: $vettery-dark-cool-gray;
+}
+
+.copy--red {
+  color: $vettery-dark-red;
+}
+
+.copy--left {
+	text-align: left;
+}
+
+.copy--center {
+	text-align: center;
+}
+
+// Copy Title Atom
+//
+// Copy TItle
+//
+// markup:
+// <span class='copy__title'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pharetra lectus aliquet risus consectetur congue. Maecenas nunc tellus, mattis non augue eget, efficitur egestas velit. Fusce vitae libero at diam porta elementum vitae posuere leo. Suspendisse vestibulum mi vestibulum risus molestie, ac iaculis elit condimentum.</span>
+//
+// sg-wrapper:
+// <div class="sg-wrapper">
+//   <sg-wrapper-content/>
+// </div>
+//
+// Styleguide 1.2.1
+
+.copy__title{
+  font-family: Effra;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 30px;
+  display: block;
+}
+
+// Copy Details Atom
+//
+// Copy Details
+//
+// markup:
+// <span class='copy__details'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pharetra lectus aliquet risus consectetur congue. Maecenas nunc tellus, mattis non augue eget, efficitur egestas velit. Fusce vitae libero at diam porta elementum vitae posuere leo. Suspendisse vestibulum mi vestibulum risus molestie, ac iaculis elit condimentum.</span>
+//
+// sg-wrapper:
+// <div class="sg-wrapper">
+//   <sg-wrapper-content/>
+// </div>
+//
+// Styleguide 1.2.2
+
+.copy__details{
+  font-family: Effra;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+// Copy Details Atom
+//
+// Copy Details
+//
+// markup:
+// <span class='copy__details'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pharetra lectus aliquet risus consectetur congue. Maecenas nunc tellus, mattis non augue eget, efficitur egestas velit. Fusce vitae libero at diam porta elementum vitae posuere leo. Suspendisse vestibulum mi vestibulum risus molestie, ac iaculis elit condimentum.</span>
+//
+// sg-wrapper:
+// <div class="sg-wrapper">
+//   <sg-wrapper-content/>
+// </div>
+//
+// Styleguide 1.2.3
+
+.copy__mobiledetails{
+  font-family: Effra;
+  font-size: 14px;
+  line-height: 17px;
+}
+

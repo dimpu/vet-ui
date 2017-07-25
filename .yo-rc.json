@@ -1,0 +1,8 @@
+{
+  "generator-ng6": {
+    "promptValues": {
+      "name": "vet-ui"
+    },
+    "app_name": "vet-ui"
+  }
+}

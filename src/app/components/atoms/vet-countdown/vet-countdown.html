@@ -1,0 +1,7 @@
+<!-- vet-countdown template -->
+
+<span ng-if="!$ctrl.timedOut">
+    {{$ctrl.timeRemaining}}
+</span>
+<vet-badge ng-if="$ctrl.timedOut" value="{{$ctrl.endMessage}}" class="dark-red">
+</vet-badge>

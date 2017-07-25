@@ -1,0 +1,30 @@
+// Vet Header Bar - Candidate Profile
+//
+// Markup:
+// <br/>
+// <vet-header-bar>
+//  <span>Hello World</span>
+// </vet-header-bar>
+// <br/>
+//
+// Styleguide 1.15
+
+vet-header-bar{
+  color: white;
+  font-size: 20px;
+  & > div{
+    padding: 18px 30px;
+    background-color: #4097DB;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  @media screen and (max-device-width: $vettery-max-device-width){
+    > div{
+      height: 40px;
+      padding: 4px;
+      span{
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<div class="position">{{label}}</div>
+<div class="bar-container">
+    <div class="bar">
+        <svg ng-if="arrow && isNotMobile" height="36" width="15" class="arrow">
+            <polygon points="0,0 3,0 15,18 3,36 0,36"/>
+        </svg>
+        <svg ng-if="arrow && isMobile" height="26" width="8" class="arrow">
+            <polygon points="0,0 3,0 8,13 3,26 0,26"/>
+        </svg>
+    </div>
+    <div class="bar-label">{{yearlabel}}</div>
+</div>

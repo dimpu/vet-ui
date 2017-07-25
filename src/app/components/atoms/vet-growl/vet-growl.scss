@@ -1,0 +1,72 @@
+
+// Vet Growl
+//
+// Markup:
+// <div>
+// <button ng-click='$ctrl.isOpen = true'></button>
+// <vet-growl message="Error ERROR. Please try again!"></vet-growl>
+// <vet-growl message="Error ERROR. Please try again!"></vet-growl>
+// <vet-growl message="Error ERROR. Please try again!"></vet-growl>
+// <vet-growl message="Error ERROR. Please try again!"></vet-growl>
+// <vet-growl message="Error ERROR. Please try again!"></vet-growl>
+// </div>
+//
+// Styleguide 1.29
+
+vet-growl{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: $vettery-z-index-growl;
+  > div {
+    min-width: $vettery-max-device-width;
+    &.mobile{
+      min-width: initial;
+      padding: 20px;
+      span{
+        font-size: 14px;
+      }
+    }
+    font-family: $vettery-sans-serif;
+    color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.21);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    background: $vettery-blue;
+    &.success{
+      background: $vettery-green;
+    }
+    &.error{
+      background: $vettery-red;
+    }
+    &.warning{
+      background: $vettery-yellow;
+    }
+    &.info{
+      background: $vettery-blue;
+    }
+    span{
+      font-size: 16px;
+      line-height: 18px;
+      margin-right: 10px;
+    }
+    &.ng-enter {
+      transition:0.2s ease all;
+      transform: translateY(-70px);
+    }
+    &.ng-enter-active {
+      transform: translateY(0px);
+    }
+    &.ng-leave {
+      transition:0.2s ease-out all;
+      transform: translateY(0px);
+    }
+    &.ng-leave-active {
+      transform: translateY(-70px);
+    }
+  }
+
+}

@@ -1,0 +1,13 @@
+<!-- vet-salary-input template -->
+<div>
+  <input  name="{{name}}"
+          placeholder="{{placeholder}}"
+          ng-model="model"
+          ng-change="handleChange()"
+          type="text"
+          money>
+  <label ng-class="{'float-up': placeholder || model}">{{label}}</label>
+</div>
+<span>
+  {{validationMessage}}
+</span>

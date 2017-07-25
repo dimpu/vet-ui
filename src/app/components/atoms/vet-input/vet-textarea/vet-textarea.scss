@@ -1,0 +1,175 @@
+
+// Text Area
+//
+// This is the standard text area. It supports standard ngInput decorators and validation parameters
+//
+// markup:
+// <vet-textarea name="someText" required maxlength="25" validation-message="This textarea is required and only accepts up to 25 characters." label='Text' ng-model='someText' rows='5'></vet-textarea>
+// <vet-textarea class='full-border' name="someText" required maxlength="25" validation-message="This textarea is required and only accepts up to 25 characters." label='Text' ng-model='someText' rows='5'></vet-textarea>
+// <vet-textarea class='white-border' name="someText" required maxlength="25" validation-message="This textarea is required and only accepts up to 25 characters." label='Text' ng-model='someText' rows='5'></vet-textarea>
+// <vet-textarea class='gray-border' name="someText" required maxlength="25" validation-message="This textarea is required and only accepts up to 25 characters." placeholder='some text' ng-model='someText' rows='5'></vet-textarea>
+// {{someText}}
+//
+// Styleguide 1.4.2
+
+vet-textarea{
+  font-size: 20px;
+  position: relative;
+  display: block;
+  margin-bottom: 0.5em;
+  color: $vettery-cool-gray;
+  font-weight: 400;
+  font-family: 'Effra', 'Helvetica', sans-serif;
+  &.full-border{
+    textarea{
+      border-style: solid;
+      border-width: 1px;
+      &.active{
+        border-color: $vettery-blue;
+      }
+    }
+  }
+  &.white-border{
+    textarea{
+      color: #FFFFFF;
+      margin: 0;
+      padding: 10px;
+      font-size: 16px;
+      line-height: 16px;
+      border: 1px solid #FFFFFF;
+      &::-webkit-input-placeholder{
+        color: #FFFFFF;
+      }
+      &:-moz-placeholder {
+          color: #FFFFFF;
+      }
+      &::-moz-placeholder {
+          color: #FFFFFF;
+      }
+      &:-ms-input-placeholder {
+          color: #FFFFFF;
+      }
+      &.active{
+       border: 1px solid #FFFFFF;
+      }
+    }
+  }
+  &.gray-border{
+    textarea{
+      background: #FFF;
+      color: $vettery-off-black;
+      margin: 0;
+      padding: 10px;
+      font-size: 16px;
+      line-height: 20px;
+      border: 1px solid $vettery-cool-gray;
+      &.active{
+       border: 1px solid $vettery-blue;
+      }
+      &::-webkit-input-placeholder{
+        color: $vettery-cool-gray;
+      }
+      &:-moz-placeholder {
+          color: $vettery-cool-gray;
+      }
+      &::-moz-placeholder {
+          color: $vettery-cool-gray;
+      }
+      &:-ms-input-placeholder {
+          color: $vettery-cool-gray;
+      }
+    }
+  }
+  &.gray-red-border{
+    textarea{
+      background: #FFF;
+      color: $vettery-off-black;
+      margin: 0;
+      padding: 10px;
+      font-size: 16px;
+      line-height: 20px;
+      border: 1px solid $vettery-cool-gray;
+      &.active{
+       border: 1px solid $vettery-dark-red;
+      }
+      &::-webkit-input-placeholder{
+        color: $vettery-cool-gray;
+      }
+      &:-moz-placeholder {
+          color: $vettery-cool-gray;
+      }
+      &::-moz-placeholder {
+          color: $vettery-cool-gray;
+      }
+      &:-ms-input-placeholder {
+          color: $vettery-cool-gray;
+      }
+    }
+  }
+  >div{
+    position: relative;
+    overflow: hidden;
+    >label{
+      font-weight: inherit;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      white-space: nowrap;
+      position: absolute;
+      top: 20px;
+      left: 2px;
+      font-size: 1em;
+      transition: .2s ease-out;
+      &.float-up{
+        font-size: .75em;
+        -webkit-transform: translateY(-90%);
+        transform: translateY(-90%);
+      }
+      &.focus{
+        color: $vettery-blue;
+      }
+    }
+    >textarea{
+      position: relative;
+      z-index: 1;
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid $vettery-cool-gray;
+      border-radius: 0;
+      outline: none;
+      width: 100%;
+      margin: 0.7em 0 1em 0;
+      padding: 0 0 0 2px;
+      box-shadow: none;
+      transition: all 0.3s;
+      color: $vettery-off-black;
+      &.active{
+        border-bottom: 2px solid $vettery-blue;
+      }
+    }
+  }
+  >span{
+    visibility: collapse;
+    font-size: 0.7em;
+    position: absolute;
+    bottom: -0.2em;
+    color: $vettery-red;
+  }
+  &.ng-invalid{
+    >div{
+      >label{
+          color: $vettery-red;
+      }
+      >textarea{
+          border-color: $vettery-red;
+      }
+    }
+    >span{
+      visibility: visible;
+      color: $vettery-red;
+    }
+  }
+}

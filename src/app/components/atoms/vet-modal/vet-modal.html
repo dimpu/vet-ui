@@ -1,0 +1,10 @@
+<div
+    class="background"
+    ng-click="$ctrl.handleClose()"
+    ng-if="$ctrl.modalControl.isOpen"
+>
+    <div class="vet-modal-content" ng-click="$event.stopPropagation()">
+        <i class="icon-close modal-close" ng-click="$ctrl.handleClose()"></i>
+        <div ng-transclude></div>
+    </div>
+</div>

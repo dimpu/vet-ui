@@ -1,0 +1,15 @@
+<div ng-if='$ctrl.isOpen' class='transition'>
+    <div class='bar'>
+        <div class='back' ng-click='$ctrl.onClose()'>
+            <div class="arrow">
+                <i class='icon-back'></i>
+            </div>
+            <div class="title" ng-bind='$ctrl.label'></div>
+        </div>
+        <div class="status">
+            <vet-spinner show='$ctrl.saving'>
+            </vet-spinner>
+        </div>
+    </div>
+    <div ng-transclude class="pullover-transclude"></div>
+</div>

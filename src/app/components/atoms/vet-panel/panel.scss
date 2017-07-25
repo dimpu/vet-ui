@@ -1,0 +1,92 @@
+// Panel - Candidate Profile
+//
+// Markup:
+// With Title and Border:
+// <panel title="Title Example" is-editable="true">
+//   Content Example
+// </panel>
+// <br/><br/><br/>
+// With Title and No Border:
+// <panel title="Title Example" is-editable="true" class="no-border">
+//   Content Example
+// </panel>
+// <br/><br/><br/>
+// Without Title:
+// <panel>
+//   Content Example
+// </panel>
+//
+// Styleguide 2.2
+
+panel{
+  display: block;
+  padding: 18px;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 6px 1px rgba(0,0,0,0.21);
+  margin: 20px 15px;
+  .header{
+    border-bottom: 1px solid $vettery-cool-gray;
+    margin-bottom: 8px;
+    padding-bottom: 10px;
+    span{
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 27px;
+      &.disclaimer {
+        color: $vettery-cool-gray;
+        float: right;
+        font-size: .9em;
+        font-weight: 200;
+        font-family: "Effra", "Helvetica", sans-serif;;
+        font-style: oblique;
+        margin-top: 4px;
+      }
+      font-family: $vettery-serif;
+      color: $vettery-dark-cool-gray;
+    }
+    a{
+      display: none;
+      text-decoration: none;
+      float: right;
+      font-size: 16px;
+      color: $vettery-blue;
+    }
+  }
+  .panel-edit {
+    font-size: 0.85em;
+    font-family: $vettery-sans-serif;
+  }
+  vet-collapsible{
+    margin: 0 -18px;
+  }
+  &.no-border{
+    .header{
+      border: none;
+    }
+  }
+  @media screen and (max-device-width: $vettery-max-device-width){
+    padding: 10px;
+    margin: 10px;
+    color: $vettery-off-black;
+    .header{
+      span {
+        font-size: 1.2em;
+        font-weight: 400;
+      }
+      padding-bottom: 8px;
+      margin-bottom: 14px;
+      span{
+        line-height: 20px;
+      }
+      a{
+        display: inline;
+      }
+    }
+    vet-collapsible-edit{
+      display: none;
+    }
+    vet-collapsible{
+      display: none;
+    }
+  }
+}

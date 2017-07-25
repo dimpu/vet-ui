@@ -1,0 +1,13 @@
+vet-progress-bar {
+  display: block;
+  .base-bar {
+    background-color: $vettery-cool-gray;
+    height: 4px;
+  }
+  .main-bar {
+    background-color: $vettery-blue;
+    margin-top: -5px;
+    width: 0;
+    height: 6px;
+  }
+}

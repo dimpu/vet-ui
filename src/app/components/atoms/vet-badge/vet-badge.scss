@@ -1,0 +1,49 @@
+// vetIcon style
+
+// Icon
+//
+// Markup:
+// <vet-badge value="1"></vet-badge>
+// <vet-badge class="yellow" value="2"></vet-badge>
+// <vet-badge class="green" value="3"></vet-badge>
+// <vet-badge class="blue" value="4"></vet-badge>
+// <vet-badge class="black" value="5"></vet-badge>
+// <vet-badge class="white" value="poop"></vet-badge>
+//
+// Styleguide 1.12
+
+vet-badge{
+  color:white;
+  background-color: $vettery-red;
+  display: inline-block;
+  font-size: 18px;
+  border-radius: 1em;
+  min-width: 1em;
+  padding: 0.2em 0.45em;
+  font-weight: bold;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  margin-bottom: 0.35em;
+  &.dark-red{
+    background-color: $vettery-dark-red;
+  }
+  &.yellow{
+    background-color: $vettery-yellow;
+  }
+  &.green{
+    background-color: $vettery-green;
+  }
+  &.blue{
+    background-color: $vettery-blue;
+  }
+  &.black{
+    background-color: $vettery-off-black;
+  }
+  &.white{
+    color:$vettery-off-black;
+    background-color: white;
+    border: solid 2px $vettery-off-black;
+  }
+}

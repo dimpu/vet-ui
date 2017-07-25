@@ -1,0 +1,152 @@
+// Dropdown Multiselect Atom
+//
+// Dropdown Multiselect
+//
+// markup:
+// <vet-dropdown-multiselect
+//  on-update='onUpdate(selectedModel)'
+//  options='options'
+//  name='"Test Dropdown"'
+// >
+// </vet-dropdown-multiselect>
+// <br/> <br/> <br/> <br/><br/><br/>
+// {{selectedModel}}
+//
+// sg-wrapper:
+// <div
+//  ng-controller='TestDropdownMultiselectParentController'
+//  style="height:300px;">
+//   <sg-wrapper-content/>
+// </div>
+//
+//
+// Styleguide 1.11
+
+.vet-multiselect-dropdown-menu {
+	li>a .glyphicon-ok{
+		color: $vettery-blue;
+		font-size: 11px;
+	}
+	&:focus {
+		outline: none;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		border-style: solid;
+		border-width: 0 10px 10px;
+		border-color: $vettery-blue transparent;
+		display: block;
+		width: 0;
+		z-index: 9000;
+		top: -10px;
+		left: 7px;
+	}
+	.option {
+		cursor: pointer;
+		color: $vettery-blue;
+		font-family: $vettery-sans-serif;
+		font-weight: 400 ;
+		cursor: pointer;
+		font-size: 16px !important;
+		border: none !important;
+		&:hover {
+			color: $vettery-blue;
+		}
+		&:focus {
+			outline: none !important;
+			color: $vettery-blue !important;
+		}
+	}
+}
+vet-dropdown-multiselect {
+	> div {
+		position: relative;
+		//padding for checkmark
+		margin-left: 9px;
+		label.active .dropdown-toggle {
+			color: $vettery-blue !important;
+		}
+		label.active .btn .caret {
+			opacity: 0;
+		}
+		label.active >.glyphicon-ok{
+			opacity: 1;
+		}
+		label {
+			user-select: none;
+			input[type=checkbox]{
+				display: none;
+			}
+      &.single {
+        &.active > .solo-toggle {
+          color: $vettery-blue !important;
+        }
+      }
+			.glyphicon-ok{
+				transition: all 75ms;
+				opacity: 0;
+				position: absolute;
+				left: -8px;
+				top: 11px;
+				color: #4097DB;
+				font-size: 15px;
+			}
+			.caret {
+				opacity:1;
+				transition: all 75ms;
+				position: absolute;
+				left: -2px;
+				top: 16px;
+				border-top: 6px dashed;
+				border-right: 5px solid transparent;
+				border-left: 5px solid transparent;
+			}
+			.dropdown-toggle, .solo-toggle {
+				font-family: $vettery-sans-serif;
+				font-weight: 400 ;
+				color: $vettery-cool-gray;
+				cursor: pointer;
+				font-size: 18px !important;
+				border: none;
+				background-color: transparent;
+				&:focus, &:active, &:hover {
+					background-color: transparent !important;
+					border: none;
+					box-shadow: none !important;
+          color: $vettery-cool-gray !important;
+				}
+        &:hover {
+          color: $vettery-blue !important;
+        }
+			}
+			.open {
+				.dropdown-toggle {
+					background-color: transparent !important;
+					color: $vettery-cool-gray !important;
+					box-shadow: none !important;
+				}
+			}
+		}
+	}
+  &.light {
+    .open .dropdown-toggle {
+      color: $vettery-light-cool-gray !important;
+    }
+    label.active .dropdown-toggle {
+      color: $vettery-light-cool-gray !important;
+    }
+    label.single.active .solo-toggle {
+      color: $vettery-light-cool-gray !important;
+    }
+    .dropdown-toggle, .solo-toggle {
+      color: $vettery-light-cool-gray !important;
+      &:focus, &:active, &:hover {
+        color: $vettery-light-cool-gray !important;
+      }
+    }
+    .glyphicon-ok{
+      color: $vettery-light-cool-gray !important;
+    }
+  }
+}
