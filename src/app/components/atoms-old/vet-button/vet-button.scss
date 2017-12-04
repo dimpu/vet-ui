@@ -15,9 +15,7 @@
 // </div>
 //
 // Styleguide 1.1
- body {
-	 background: red;
- }
+
 @mixin button($border, $background, $text) {
 	background-color: $background;
 	border: 2px solid $border;

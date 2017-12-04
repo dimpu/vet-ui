@@ -1,22 +1,23 @@
-// import { money as moneyFilter, positiveWholeNumber } from 'utils/filters';
+import { percentage, positiveWholeNumber } from 'utils/filters';
 
-const moduleName = 'money';
+const moduleName = 'percent';
 
-function money() {
+function percent() {
     return {
         require: 'ngModel',
         link: (scope, element, attrs, modelCtrl) => {
             modelCtrl.$parsers.push(inputValue => {
-                const viewValue = moneyFilter(inputValue);
+                const viewValue = percentage(inputValue);
                 if (viewValue !== inputValue) {
                     modelCtrl.$setViewValue(viewValue);
                     modelCtrl.$render();
                 }
+
                 return positiveWholeNumber(inputValue);
             });
 
             modelCtrl.$formatters.push(inputValue => {
-                return moneyFilter(inputValue);
+                return percentage(inputValue);
             });
         }
     };
@@ -24,5 +25,5 @@ function money() {
 
 export default angular
     .module(moduleName, [])
-    .directive(moduleName, money)
+    .directive(moduleName, percent)
     .name;

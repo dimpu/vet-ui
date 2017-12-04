@@ -1,0 +1,16 @@
+<!-- vet-textarea template -->
+
+<div>
+  <textarea name="{{name}}"
+            ng-model="model"
+            rows="{{rows}}"
+            maxlength="{{maxlength}}"
+            cols="{{cols}}"
+            placeholder="{{placeholder}}"
+            ng-change="change()"
+            ></textarea>
+  <label ng-class="{'float-up': placeholder || model}">{{label}}</label>
+</div>
+<span>
+  {{validationMessage}}
+</span>

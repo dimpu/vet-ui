@@ -1,0 +1,16 @@
+<!-- vet-input template -->
+
+<i ng-if="icon" class="{{icon}}"></i>
+<div>
+    <input
+        name="{{name}}"
+        ng-model="model"
+        placeholder="{{placeholder}}"
+        type="{{inputType}}"
+        ng-change="updateModel()"
+    >
+    <label ng-class="{'float-up': placeholder || model}">{{label}}</label>
+</div>
+<span>
+    {{validationMessage}}
+</span>

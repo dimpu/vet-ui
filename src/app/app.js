@@ -1,11 +1,15 @@
 import angular from 'angular';
 import '@uirouter/angularjs';
-// import Common from './common/common';
-// import Components from './components/components';
+import Common from './common/common';
+import Components from './components/components';
 import AppComponent from './app.component';
+import Atoms from './components/atoms';
 
 let appModule = angular.module('app', [
-
+	'ui.router',
+	Common.name,
+	Atoms.name,
+	Components.name
 ])
 .component('app', AppComponent);
 

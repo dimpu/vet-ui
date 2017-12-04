@@ -1,5 +1,5 @@
 import templateUrl from './vet-countdown.html';
-let moment = require('moment');
+import moment from 'moment';
 
 const moduleName = 'vetCountdown';
 

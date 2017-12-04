@@ -1,0 +1,15 @@
+<!-- vet-phone-input template -->
+<div>
+    <input
+        name="{{name}}"
+        ng-model="model"
+        ng-change="handleChange()"
+        type="text"
+        placeholder="{{placeholder}}"
+        phonenumber
+    >
+    <label ng-class="{ active: model }">{{label}}</label>
+</div>
+<span>
+  {{validationMessage}}
+</span>

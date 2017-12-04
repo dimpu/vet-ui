@@ -1,0 +1,94 @@
+// Phone Input
+//
+// Markup:
+// <vet-phone-input placeholder="Phone number" ng-model="phone_number" minlength="12" validation-message="Please provide a valid U.S. phone number"></vet-phone-input>
+// {{phone_number}}
+//
+// Styleguide 1.4.3
+//
+
+vet-phone-input{
+  font-size: 20px;
+  position: relative;
+  display: block;
+  margin-bottom: 0.5em;
+  color: $vettery-cool-gray;
+  font-family: 'Effra', sans-serif;
+  font-weight: 400;
+  width: 100%;
+  >i{
+    color: $vettery-dark-cool-gray;
+    float: left;
+    width: 1em;
+    margin-right: 10px;
+    margin-top: 0.56em;
+    font-size: 1.5em;
+    font-style: normal;
+  }
+  >div{
+    position: relative;
+    overflow: hidden;
+    >label{
+      font-weight: inherit;
+      user-select: none;
+      white-space: nowrap;
+      position: absolute;
+      bottom: 0;
+      left: 2px;
+      font-size: 1em;
+      transition: .2s ease-out;
+      &.active{
+        font-size: .75em;
+        -webkit-transform: translateY(-150%);
+        transform: translateY(-150%);
+      }
+      &.focus{
+        color: $vettery-blue;
+      }
+    }
+    >input[type=text]{
+      position: relative;
+      z-index: 1;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid $vettery-cool-gray;
+      border-radius: 0;
+      outline: none;
+      height: 1.5em;
+      width: 100%;
+      margin: 1.4em 0 0 0;
+      padding: 0 0 0 2px;
+      box-shadow: none;
+      box-sizing: content-box;
+      transition: all 0.3s;
+      font-weight: 400;
+      color: $vettery-off-black;
+      line-height: 33px;
+      height: 33px;
+      &.active{
+        border-bottom: 1px solid $vettery-blue;
+      }
+    }
+  }
+  >span{
+    visibility: collapse;
+    font-size: 0.7em;
+    position: absolute;
+    bottom: -20px;
+    color: $vettery-red;
+  }
+  &.ng-invalid.ng-dirty{
+    >div{
+      >label{
+          color: $vettery-red;
+      }
+      >input[type=text]{
+          border-color: $vettery-red;
+      }
+    }
+    >span{
+      visibility: visible;
+      color: $vettery-red;
+    }
+  }
+}

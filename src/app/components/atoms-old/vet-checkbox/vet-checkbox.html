@@ -1,0 +1,14 @@
+<div ng-click="$ctrl.onClick()" ng-class="{ active: $ctrl.model }">
+    <span
+        class="box"
+        ng-class="{ active: $ctrl.model }"
+    ></span>
+    <label
+        for="{{$ctrl.label}}"
+        ng-class="{ active: $ctrl.model }"
+    >{{$ctrl.label}}</label>
+    <span
+        ng-if="$ctrl.model"
+        class="glyphicon glyphicon-ok"
+    ></span>
+</div>

@@ -23,7 +23,9 @@ const vetUiSelect = {
     controller: [vetUiSelectController]
 };
 
-export default angular.module(moduleName, ['ui.select'])
+export default angular.module(moduleName, 
+    // ['ui.select']
+)
     .component(moduleName, vetUiSelect)
     .name;
 

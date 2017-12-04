@@ -1,7 +1,7 @@
 'use strict';
 
 import templateUrl from './vet-pill.html';
-import angularTooltips from 'angular-tooltips';
+// import angularTooltips from 'angular-tooltips';
 
 const moduleName = 'vetPill';
 
@@ -21,6 +21,8 @@ function vetPill() {
     };
 }
 
-export default angular.module(moduleName, [angularTooltips])
+export default angular.module(moduleName, [
+    // angularTooltips
+])
     .directive(moduleName, vetPill)
     .name;

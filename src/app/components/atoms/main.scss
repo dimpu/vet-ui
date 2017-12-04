@@ -1,0 +1,67 @@
+
+/* Variables */
+$vettery-blue: #4097db;
+$vettery-light-cool-gray: #eaeef1;
+$vettery-cool-gray: #c0c7d0;
+$vettery-dark-cool-gray: #6b7481;
+$vettery-off-black: #4b4e55;
+$vettery-mint-green: #48beab;
+$vettery-deep-blue: #306d96;
+$vettery-red: #ff3b30;
+$vettery-dark-red: #DC382F;
+$vettery-green: #00a14b;
+$vettery-yellow: #ffd200;
+
+$vettery-max-device-width: 736px;
+
+$vettery-sans-serif: 'Effra', 'Helvetica', sans-serif;
+$vettery-serif:  'freight-display-pro','Georgia', 'times', serif;
+
+
+$vettery-z-index-1: 100;
+$vettery-z-index-2: 200;
+$vettery-z-index-3: 300;
+$vettery-z-index-4: 400;
+$vettery-z-index-5: 500;
+$vettery-z-index-10: 1000;
+
+.candidate-profile {
+	profile , candidate-interviews, settings {
+		> div {
+			position: relative;
+			top: 60px;
+		}
+	}
+}
+
+@media screen and (max-device-width: $vettery-max-device-width){
+	.candidate-profile{
+		profile , candidate-interviews, settings {
+			> div {
+				position: relative;
+				top: 0px;
+			}
+		}
+	}
+}
+
+.vet-row-label {
+	font-family: $vettery-sans-serif;
+	flex: 0 0 110px;
+	border-right: 1px solid #ccc;
+	margin-right: 10px;
+	color: $vettery-dark-cool-gray;
+	font-weight: 400;
+	height: 36px;
+	font-family: Effra;
+	font-size: 0.9em;
+	line-height: 36px;
+}
+
+.vet-red-link {
+	cursor: pointer;
+	color: $vettery-red;
+	line-height: 36px;
+	text-decoration: underline;
+	font-family: $vettery-sans-serif;
+}

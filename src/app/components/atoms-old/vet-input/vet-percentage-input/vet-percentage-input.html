@@ -1,0 +1,15 @@
+<i ng-if="$ctrl.icon" class="{{$ctrl.icon}}"></i>
+<div>
+    <input
+        type="text"
+        ng-model="$ctrl.model"
+        ng-change="$ctrl.handleUpdate()"
+        placeholder="{{$ctrl.placeholder}}"
+        percent
+        ignore-last
+    >
+    <label ng-class="{'float-up': $ctrl.placeholder || $ctrl.model}">{{$ctrl.label}}</label>
+</div>
+<span>
+    {{$ctrl.validationMessage}}
+</span>
